@@ -1,0 +1,35 @@
+import { type IDocument, type INode, type NodeRecord } from "@dronecad/core";
+import { TreeItem } from "./treeItem";
+export declare class Tree extends HTMLElement {
+    private document;
+    private readonly nodeMap;
+    private lastClicked;
+    private readonly selectedNodes;
+    private dragging;
+    constructor(document: IDocument);
+    private initializeTree;
+    connectedCallback(): void;
+    disconnectedCallback(): void;
+    treeItem(node: INode): TreeItem | undefined;
+    dispose(): void;
+    readonly handleNodeChanged: (records: NodeRecord[]) => void;
+    private createAndMapParent;
+    private readonly handleSelectionChanged;
+    private ensureHasHTML;
+    private scrollToNode;
+    private expandParents;
+    private addAllNodes;
+    private createHTMLElement;
+    private addEvents;
+    private removeEvents;
+    private getTreeItem;
+    private readonly onClick;
+    private handleShiftClick;
+    private readonly onDragLeave;
+    private readonly onDragOver;
+    private canSelect;
+    private setLastClickItem;
+    private canDrop;
+    protected onDrop: (event: DragEvent) => void;
+    private readonly onDragStart;
+}

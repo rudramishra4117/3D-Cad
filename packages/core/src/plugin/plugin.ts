@@ -1,0 +1,18 @@
+import type { RibbonTabProfile } from "@dronecad/core";
+import type { CommandConstructor } from "../command";
+import type { Locale } from "../i18n";
+import type { IService } from "../service";
+
+export type Plugin = {
+    /** Commands to register*/
+    commands?: CommandConstructor[];
+
+    /** Ribbon contributions to register*/
+    ribbons?: RibbonTabProfile[];
+
+    /** I18n resources to register*/
+    i18nResources?: Locale[];
+
+    /** Services to register */
+    services?: IService[];
+};

@@ -1,0 +1,56 @@
+import {
+    command,
+    type GeometryNode,
+    type IStep,
+    LengthAtPlaneStep,
+    PointStep,
+    Precision,
+    type SnapLengthAtPlaneData,
+    XYZ,
+} from "@dronecad/core";
+import { SphereNode } from "../../bodys";
+import { CreateCommand } from "../createCommand";
+
+@command({
+    key: "create.sphere",
+    icon: "icon-sphere",
+})
+export class Sphere extends CreateCommand {
+    protected override getSteps(): IStep[] {
+        const centerStep = new PointStep("prompt.pickCircleCenter");
+        const radiusStep = new LengthAtPlaneStep("prompt.pickRadius", this.getRadiusData);
+        return [centerStep, radiusStep];
+    }
+
+    private readonly getRadiusData = (): SnapLengthAtPlaneData => {
+        const point = this.stepDatas[0].point!;
+        return {
+            point: () => point,
+            preview: this.previewSphere,
+            plane: () => this.stepDatas[0].view.workplane.translateTo(point),
+            validator: (p: XYZ) => p.distanceTo(point) > Precision.Distance,
+        };
+    };
+
+    private readonly previewSphere = (end: XYZ | undefined) => {
+        if (!end) {
+            return [this.meshPoint(this.stepDatas[0].point!)];
+        }
+
+        const radius = this.stepDatas[0].point?.distanceTo(end)!;
+        return [
+            this.meshPoint(this.stepDatas[0].point!),
+            this.meshCreatedShape("circle", XYZ.unitZ, this.stepDatas[0].point!, radius),
+            this.meshCreatedShape("circle", XYZ.unitY, this.stepDatas[0].point!, radius),
+        ];
+    };
+
+    protected override geometryNode(): GeometryNode {
+        const radius = this.stepDatas[0].point!.distanceTo(this.stepDatas[1].point!);
+        return new SphereNode({
+            document: this.document,
+            center: this.stepDatas[0].point!,
+            radius,
+        });
+    }
+}

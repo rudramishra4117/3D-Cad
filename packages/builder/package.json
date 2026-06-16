@@ -1,0 +1,13 @@
+{
+    "name": "@dronecad/builder",
+    "version": "0.7.0-beta",
+    "description": "",
+    "main": "src/index.ts",
+    "devDependencies": {
+        "@dronecad/app": "*",
+        "@dronecad/i18n": "*",
+        "@dronecad/three": "*",
+        "@dronecad/ui": "*",
+        "@dronecad/wasm": "*"
+    }
+}

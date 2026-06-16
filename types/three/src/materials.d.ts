@@ -1,0 +1,14 @@
+import { MeshLambertMaterial, PointsMaterial } from "three";
+import { LineMaterial } from "three/examples/jsm/lines/LineMaterial.js";
+export declare const defaultVertexMaterial: PointsMaterial;
+export declare const highlightVertexMaterial: PointsMaterial;
+export declare const selectedVertexMaterial: PointsMaterial;
+export declare const defaultEdgeMaterial: LineMaterial;
+export declare const hilightEdgeMaterial: LineMaterial;
+export declare const hilightDashedEdgeMaterial: LineMaterial;
+export declare const selectedEdgeMaterial: LineMaterial;
+export declare const faceTransparentMaterial: MeshLambertMaterial;
+export declare const faceColoredMaterial: MeshLambertMaterial;
+export declare const highlightFaceMaterial: MeshLambertMaterial;
+export declare const lockFaceMaterial: MeshLambertMaterial;
+export declare const lockLineMaterial: LineMaterial;

@@ -1,0 +1,33 @@
+import type { IDocument } from "../../document";
+import { type XYZ } from "../../math";
+import { type ObjectSnapType } from "../../snapType";
+import type { MouseAndDetected, SnapResult } from "../snap";
+import { BaseSnap } from "./baseSnap";
+export declare class ObjectSnap extends BaseSnap {
+    private _snapType;
+    private readonly _featureStrategy;
+    private readonly _intersectionInfos;
+    private readonly _invisibleInfos;
+    private _lastDetected?;
+    private _hintVertex?;
+    constructor(_snapType: ObjectSnapType, referencePoint?: () => XYZ);
+    clear(): void;
+    readonly handleSnaped: (document: IDocument, snaped?: SnapResult | undefined) => void;
+    private readonly onSnapTypeChanged;
+    removeDynamicObject(): void;
+    private removeHint;
+    snap(data: MouseAndDetected): SnapResult | undefined;
+    private snapOnShape;
+    private displayHint;
+    private snapeInvisible;
+    private getNearestInvisibleSnap;
+    private showInvisibleSnaps;
+    private showCircleCenter;
+    private hilighted;
+    private sortSnaps;
+    private findPerpendicular;
+    private getIntersections;
+    private getIntersectionKey;
+    private findIntersections;
+    private findNearestPointAtEdgeCurve;
+}

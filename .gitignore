@@ -1,0 +1,13 @@
+node_modules
+build
+dist
+coverage
+.VSCodeCounter
+.DS_Store
+.clang-format
+CMakeUserPresets.json
+types.rspack
+.vscode
+*.log
+*.vsix
+*.zip   

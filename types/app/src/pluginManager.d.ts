@@ -1,0 +1,37 @@
+import { type IApplication, type IPluginManager, type Plugin, type PluginManifest } from "@dronecad/core";
+export declare class PluginManager implements IPluginManager {
+    readonly app: IApplication;
+    readonly plugins: Map<string, Plugin>;
+    readonly manifests: Map<string, PluginManifest>;
+    readonly shouldRevokes: Map<string, string[]>;
+    constructor(app: IApplication);
+    loadFromFile(file: File): Promise<void>;
+    private loadFromRemoteFile;
+    loadFromUrl(urlString: string): Promise<void>;
+    private buttons;
+    private readManifestFromZip;
+    private readManifestFromUrl;
+    private loadPluginFromZip;
+    private loadPluginFromUrl;
+    private loadImportmapFromUrl;
+    private loadMainCode;
+    private transformZipCommandIcon;
+    private transformUrlCommandIcon;
+    unload(pluginName: string): Promise<void>;
+    unloadAll(): void;
+    getPlugins(): Plugin[];
+    get(pluginName: string): Plugin | undefined;
+    isLoaded(pluginName: string): boolean;
+    private validateManifest;
+    private isValidSemver;
+    private satisfiesVersion;
+    private compareVersions;
+    private registerPlugin;
+    private unregisterPlugin;
+    private loadCssFromZip;
+    private loadCssFromUrl;
+    private getImportmapFromZip;
+    private injectImportmap;
+    private injectCss;
+    private removePluginCss;
+}

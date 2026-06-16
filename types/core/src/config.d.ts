@@ -1,0 +1,51 @@
+import { Observable } from "./foundation";
+import type { Navigation3DType } from "./navigation";
+import { type ObjectSnapType } from "./snapType";
+export declare const DefaultLightEdgeColor = 3355443;
+export declare const DefaultDarkEdgeColor = 15658734;
+export declare class VisualItemConfig extends Observable {
+    defaultFaceColor: number;
+    highlightEdgeColor: number;
+    highlightFaceColor: number;
+    selectedEdgeColor: number;
+    selectedFaceColor: number;
+    editVertexSize: number;
+    editVertexColor: number;
+    hintVertexSize: number;
+    hintVertexColor: number;
+    trackingVertexSize: number;
+    trackingVertexColor: number;
+    temporaryVertexSize: number;
+    temporaryVertexColor: number;
+    temporaryEdgeColor: number;
+    get defaultEdgeColor(): number;
+    set defaultEdgeColor(value: number);
+    applyTheme(theme: "light" | "dark"): void;
+}
+export declare const VisualConfig: VisualItemConfig;
+export declare class Config extends Observable {
+    #private;
+    static get instance(): Config;
+    readonly SnapDistance: number;
+    get snapType(): ObjectSnapType;
+    set snapType(snapType: ObjectSnapType);
+    get enableSnapTracking(): boolean;
+    set enableSnapTracking(value: boolean);
+    get enableSnap(): boolean;
+    set enableSnap(value: boolean);
+    get dynamicWorkplane(): boolean;
+    set dynamicWorkplane(value: boolean);
+    get language(): string;
+    set language(value: string);
+    get navigation3D(): Navigation3DType;
+    set navigation3D(value: Navigation3DType);
+    get themeMode(): "light" | "dark" | "system";
+    set themeMode(value: "light" | "dark" | "system");
+    get trustedDomains(): string[];
+    set trustedDomains(value: string[]);
+    get storageKey(): string;
+    private constructor();
+    init(storageKey: string): void;
+    readFromStorage(): void;
+    saveToStorage(): void;
+}

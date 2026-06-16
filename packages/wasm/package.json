@@ -1,0 +1,10 @@
+{
+    "name": "@dronecad/wasm",
+    "version": "0.7.0-beta",
+    "description": "",
+    "main": "src/index.ts",
+    "type": "module",
+    "devDependencies": {
+        "@dronecad/core": "*"
+    }
+}
