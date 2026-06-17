@@ -9,7 +9,7 @@ import { SelectionHandler } from "./selectionEventHandler";
 export class NodeSelectionHandler extends SelectionHandler {
     private _highlights: IVisualObject[] | undefined;
     private _detectAtMouse: IVisualObject[] | undefined;
-    private _lockDetected: IVisualObject | undefined; // 用于切换捕获的对象
+    private _lockDetected: IVisualObject | undefined; //
     protected highlighState = VisualStates.edgeHighlight;
 
     nodes(): VisualNode[] {

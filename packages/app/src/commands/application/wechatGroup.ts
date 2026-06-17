@@ -23,9 +23,9 @@ export class WeChatGroup implements ICommand {
                         opacity: "0.75",
                     },
                 },
-                "群聊人数已超过200人，只可通过邀请进入群聊",
+                "200，",
                 br(),
-                "入群请先添加个人微信：oOxianOo",
+                "：oOxianOo",
             ),
             img({
                 width: 360,

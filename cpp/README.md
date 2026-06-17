@@ -1,4 +1,4 @@
-# chili3d's WebAssembly Module
+# drone3d's WebAssembly Module
 
 ## Clone and install all dependencies
 

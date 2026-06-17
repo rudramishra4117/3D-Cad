@@ -1,4 +1,4 @@
-// Live self-test as the mechanical-engineer persona: build a bell crank (鐘形曲柄)
+// Live self-test as the mechanical-engineer persona: build a bell crank ()
 // — an L-shaped pivoting lever that converts a vertical input force to a horizontal
 // output. Drives the bridge exactly like the live_* MCP tools (same core).
 //   pivot (10,10)  input pin (50,10)  output pin (10,30)

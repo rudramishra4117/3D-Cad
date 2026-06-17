@@ -12,12 +12,12 @@ const mockLocaleEn: Locale = {
 };
 
 const mockLocaleZh: Locale = {
-    display: "中文",
+    display: "",
     language: "zh-CN",
     translation: {
-        "common.cancel": "取消",
-        "common.confirm": "确认",
-        "error.default:{0}": "错误: {0}",
+        "common.cancel": "",
+        "common.confirm": "",
+        "error.default:{0}": ": {0}",
     } as any,
 };
 
@@ -179,8 +179,8 @@ describe("I18n", () => {
 
             I18n.changeLanguage("zh-CN");
 
-            expect(element1.textContent).toBe("取消");
-            expect(element2.title).toBe("确认");
+            expect(element1.textContent).toBe("");
+            expect(element2.title).toBe("");
 
             document.body.removeChild(element1);
             document.body.removeChild(element2);

@@ -133,7 +133,7 @@ export class CommandContext extends HTMLElement implements IDisposable {
                 if (noType[g.name] instanceof Combobox) {
                     return this.newCombobox(noType, g);
                 }
-                throw new Error("暂不支持的类型");
+                throw new Error("");
         }
     }
 

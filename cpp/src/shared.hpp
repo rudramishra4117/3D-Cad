@@ -1,5 +1,3 @@
-// Part of the Chili3d Project, under the LGPL-3.0 License.
-// See LICENSE-chili-wasm.text file in the project root for full license information.
 
 #pragma once
 

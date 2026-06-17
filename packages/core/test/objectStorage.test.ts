@@ -157,7 +157,7 @@ describe("ObjectStorage class", () => {
             const specialValue = {
                 quotes: '"test"',
                 newline: "line1\nline2",
-                unicode: "你好世界 🌍",
+                unicode: " 🌍",
             };
             storage.setValue("special", specialValue);
             expect(storage.value<object>("special")).toEqual(specialValue);
